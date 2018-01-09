@@ -147,7 +147,7 @@ $root@server:~/laravel/laradock# docker-compose down
 $root@server:~/laravel/laradock# docker-compose build nginx
 ```
 
-## Re Run Your Containers MYSQL and NGINX
+## Re-run Your Container's MYSQL and NGINX
 
 ```
 $root@server:~/laravel/laradock/nginx# docker-compose up -d nginx mysql
@@ -159,7 +159,7 @@ $root@server:~/laravel/laradock/nginx# docker-compose up -d nginx mysql
 
 **Note: You need to Use Caddy here Instead of Nginx**
 
-To go Caddy Folders and Edit CaddyFile
+Go to `caddy` and edit `Caddyfile`:
 
 ```
 $root@server:~/laravel/laradock# cd caddy
@@ -186,18 +186,23 @@ uncomment tls
 #tls self-signed
 ```
 
-and replace self-signed with your email address
+and replace `self-signed` with your email address
 
 ```
 tls serverbreaker@gmai.com
 ```
 
-This is needed Prior to Creating Let's Encypt
+Save your changes, then rebuild caddy:
+```
+$root@server:~/laravel/laradock# docker-compose build caddy
+```
+
+This is needed prior to creating Let's Encypt.
 
 ## Run Your Caddy Container without the -d flag and Generate SSL with Let's Encrypt
 
 ```
-$root@server:~/laravel/laradock/caddy# docker-compose up  caddy
+$root@server:~/laravel/laradock# docker-compose up caddy
 ```
 
 You'll be prompt here to enter your email... you may enter it or not
