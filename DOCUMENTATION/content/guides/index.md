@@ -197,7 +197,7 @@ This is needed Prior to Creating Let's Encypt
 ## Run Your Caddy Container without the -d flag and Generate SSL with Let's Encrypt
 
 ```
-$root@server:~/laravel/laradock/caddy# docker-compose up  caddy
+$root@server:~/laravel/laradock# docker-compose up caddy
 ```
 
 You'll be prompt here to enter your email... you may enter it or not
